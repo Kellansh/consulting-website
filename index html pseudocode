@@ -1,0 +1,41 @@
+html lang en-us
+
+head
+    charset
+    name
+    title and desc. can look up seo later
+    whatever else goes in the head
+    set meta viewport?
+    do you need to set canonical link?
+    meta tags for social media
+
+meta tags
+
+meta properties
+
+microdata? for search engines
+
+styles
+for title use gilbert baker font or outline style (both downloaded in documents folder)
+gilbert font attribution in footer
+for paragraph text use inclusive sans
+throw a couple bucks toward whatever fonts you use
+
+I want a single page website
+sectioned off like wptk.org
+first section about me
+second section faq or smth? list of services? testimonials? in faq, talk about location. I'm located in ann arbor and can do in person or remote.
+third section contact form
+second and third sections open and closeable maybe?
+where can I put in pictures to make this look friendly?
+within nav, click to scroll to testimonials or w/e and open the drawer
+
+script like olu/bear's to make a map of where cursor was moved, except for everyone not just robots?
+
+
+note:
+olu.online (and by extension bearblog.dev)
+wptk.org
+
+questions for others:
+why isn't the form using the overall font family?
