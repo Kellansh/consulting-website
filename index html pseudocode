@@ -32,10 +32,53 @@ within nav, click to scroll to testimonials or w/e and open the drawer
 
 script like olu/bear's to make a map of where cursor was moved, except for everyone not just robots?
 
+add footer or delete its css style
 
-note:
+
+inspirations:
 olu.online (and by extension bearblog.dev)
 wptk.org
 
-questions for others:
-why isn't the form using the overall font family?
+more to-dos:
+url ideas
+url buy
+email address for this website
+put email on contact form like "Reach me at email@address or via this form:"
+pick a serif font
+
+tests once hosted:
+on mobile android
+on mobile iphone
+safari (webkit)
+chrome
+SANITIZE INPUTS
+input errors
+input success
+if honeypot then discard email
+
+url thoughts:
+looking at tlds: .pal, .now, .me, .love, .garden, .engineer, .coach, .coffee, .aware, .aspect, .art, .world, .zone, .talk, .spot, .solutions, .page
+happiness minutes
+better with kellan
+organize your life
+it's all projects
+adhd coaching
+project coaching
+project based coaching
+ksh sounds like a cymbal
+kellancanhelpwithyourproject (.coach is 60/yr, .solutions is 25/yr, .talk is 30/yr, .com is 11/yr)
+ksh-coach (.com 11/yr, .now 30/yr, .talk 30/yr)
+kellanheth.com 11/yr, kellanheth.net 12/yr, kellanheth.coach 62/yr
+kellanprojectsolutions too long
+kellan-coaches.com 11/yr
+
+coach has motivational platitudes connotation
+assisting in organizational tasks
+task assistant is too vague but that's kind of what it is
+
+examples:
+organizing in order to get new clients as a tutor
+getting health insurance
+making a video game for the first time as a solo developer
+
+

@@ -32,23 +32,24 @@
 
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
     html {
         color-scheme: light dark;
     }
 
     @media (prefers-color-scheme: light) {
-    color-scheme: light;
+        color-scheme: light;
     }
 
     @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+        color-scheme: dark;
     }
 
     @font-face {
         font-family: "Gilbert";
         src: url('fonts/Gilbert/Gilbert-Color Bold Preview5.otf');
-        src: url(fonts/Gilbert/Gilbert-Color Bold Preview5.otf') format('opentype');
+        src: url('fonts/Gilbert/Gilbert-Color Bold Preview5.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
@@ -64,13 +65,13 @@
 
     :root, body, html, * {
         --width: 720px;
-        --font-main: serif;
-        --font-secondary: "Inclusive Sans", sans-serif;
-        --font-scale: 1.2em;
+        --font-main: Crimson Text, serif;
+        --font-secondary: Inclusive Sans, sans-serif;
+        --font-scale: 1.1em;
         --background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-        --background-color: light-dark(#fff3d7,#222222);
-        --heading-color: light-dark(#005752,#cc11cc);
-        --text-color: light-dark(#03233f,#11cc11);
+        --background-color: light-dark(#fff3d7,#000000);
+        --heading-color: light-dark(#005752,#292b73);
+        --text-color: light-dark(#03233f,#4c92aa);
         --link-color: light-dark(#aaaaaa,#aaaaaa);
         --visited-color: light-dark(#dddddd,#888888);
     }
@@ -100,7 +101,7 @@
         font-family: "Gilbert";
         padding: 5px 10px;
         background: #ffffff;
-        color: var(--background-color);
+        color: var(--heading-color);
         display: inline-block;
         border: 2px solid var(--heading-color);
         border-style: inset;
@@ -115,6 +116,12 @@
     h6 {
         font-family: var(--font-main);
         color: var(--heading-color);
+        margin: 0;
+    }
+
+    p, li {
+        font-family: var(--font-secondary);
+        margin: 0;
     }
 
     a {
@@ -129,20 +136,12 @@
     }
 
     main {
-        margin-top: 40px;
+        margin-top: 20px;
         margin-bottom: 20px;
         padding: 30px;
         border: 1px solid var(--text-color);
         line-height: 1.6;
         background-image: none;
-    }
-
-    .big-box {
-        margin-top: 40px;
-        margin-bottom: 20px;
-        padding: 30px;
-        border: 1px solid var(--text-color);
-        line-height: 1.6;
     }
 
     button {
@@ -161,54 +160,109 @@
         text-align: center;
     }
 
+    details {
+    }
+
+    details summary > * {
+        display: inline;
+    }
+
+    summary::marker {
+        color: var(--heading-color);
+    }
+
+    .nickname {
+        display: none;
+    }
+
+    .form-input {
+        display: flex;
+    }
+
+    form > * {
+        font-family: var(--font-secondary);
+    }
+
+    input[type=text], [type=email] {
+        flex: auto;
+        background-image: var(--background-image);
+        background-color: var(--background-color);
+        border: none;
+        border-bottom: 2px solid var(--heading-color);
+        border-radius: 2px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    textarea {
+        border: 2px solid var(--heading-color);
+        border-radius: 2px;
+        border-top: none;
+        width: 100%;
+        margin: 0px 10px 0px 10px;
+    }
+
     </style>
 </head>
 
 <body>
     <header>
         <a class="title" href="/">
-            <h1>happiness minutes</h1>
+            <h1>title placeholder</h1>
         </a>
-
-        <nav>
-        </nav>
     </header>
 
     <main>
 
-        <h2>about me</h2>
-        <p>about me<p>
+        <h2>About Me</h2>
+        <p>Who I am professionally</p>
+        <p>In my personal life, I like board games and iced chai tea.</p>
 
         <hr />
 
-        <h3>services</h3>
-        <p>services?<p>
+        <details>
+            <summary><h3>Services<h3></summary>
+            <p>Accountability Buddy (available during drop-in hours)</p>
+            <p>Navigating the Chaos</p>
+            <p></p>
+            <p>Contact me for drop-in hours or a free consultation.</p>
+        </details>
 
         <hr />
 
-        <h3>testimonials</h3>
-        <p>testimonials?<p>
+        <details>
+            <summary><h3>Testimonials<h3></summary>
+            <p>testimonials?</p>
+        </details>
 
         <hr />
 
-        <h3>contact</h3>
-        <form action="" method="get">
+        <details open="true">
+            <summary><h3>Contact</h3></summary>
             <div>
-                <label for="name">Name: </label>
-                <input type="Text" name="name" id="name" required />
+                <form action="send-email.php" method="post">
+                    <div class="form-input">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="name" required />
+                    </div>
+                    <div class="nickname">
+                        <label for="nickname" aria-hidden="true" class="nickname">Nickname: </label>
+                        <input type="text" name="nickname" id="nickname" class="nickname" />
+                    </div>
+                    <div class="form-input">
+                        <label for="email">Email address: </label>
+                        <input type="email" name="email" id="email" required />
+                    </div>
+                    <div class="form-input">
+                        <textarea name="message" id="message" required
+                            rows="5"
+                            placeholder="Your message here..."></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Send" />
+                    </div>
+                </form>
             </div>
-            <div>
-                <label for="email">Email address: </label>
-                <input type="email" name="email" id="email" required />
-            </div>
-            <div>
-                <label for="message">Message: </label>
-                <input type="textbox" name="message" id="message" required />
-            </div>
-            <div>
-                <input type="submit" value="Send" />
-            </div>
-        </form>
+        </details>
     </main>
 
 </body>
