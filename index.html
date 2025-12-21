@@ -68,10 +68,12 @@
         --font-main: Crimson Text, serif;
         --font-secondary: Inclusive Sans, sans-serif;
         --font-scale: 1.1em;
+        --font-scale-input: 0.9em;
         --background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-        --background-color: light-dark(#fff3d7,#000000);
-        --heading-color: light-dark(#005752,#292b73);
-        --text-color: light-dark(#03233f,#4c92aa);
+        --background-color: light-dark(#fff3d7,#f2ecd9);
+        --heading-color: light-dark(#005752,#000000);
+        --text-color: light-dark(#03233f,#000000);
+        --accent-color: light-dark(#00b9a7,#005752);
         --link-color: light-dark(#aaaaaa,#aaaaaa);
         --visited-color: light-dark(#dddddd,#888888);
     }
@@ -94,34 +96,45 @@
 
 
     .title:hover h1 {
-        text-decoration: none:
+        text-decoration: none;
     }
 
     .title h1 {
-        font-family: "Gilbert";
+        font-family: Gilbert, Outline Style, serif;
         padding: 5px 10px;
         background: #ffffff;
-        color: var(--heading-color);
+        color: var(--accent-color);
         display: inline-block;
         border: 2px solid var(--heading-color);
         border-style: inset;
         border-radius: 5px;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, h2 {
         font-family: var(--font-main);
         color: var(--heading-color);
         margin: 0;
     }
 
-    p, li {
+    h3, h4, h5, h6 {
         font-family: var(--font-secondary);
+        color: var(--heading-color);
         margin: 0;
+        font-style: italic;
+    }
+
+    p, ul, li {
+        margin: 0;
+    }
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    blockquote {
+        margin: 20px;
     }
 
     a {
@@ -160,7 +173,8 @@
         text-align: center;
     }
 
-    details {
+    .inside-details {
+        padding: 0 10px 0 10px;
     }
 
     details summary > * {
@@ -177,28 +191,52 @@
 
     .form-input {
         display: flex;
+        align-items: flex-end;
     }
 
     form > * {
         font-family: var(--font-secondary);
     }
 
+    label {
+        width: 3.15em;
+    }
+
     input[type=text], [type=email] {
         flex: auto;
-        background-image: var(--background-image);
-        background-color: var(--background-color);
-        border: none;
-        border-bottom: 2px solid var(--heading-color);
+        min-width: 5em;
+        max-width: 15em;
+        height:var(--font-scale);
+        margin-top: 0;
+        margin-right: 10px;
+        margin-left: 10px; 
+        margin-bottom: calc(var(--font-scale)*0.3);
+        border: 1px solid var(--accent-color);
         border-radius: 2px;
-        margin: 0px 10px 0px 10px;
+        font-size: var(--font-scale-input);
     }
 
     textarea {
-        border: 2px solid var(--heading-color);
-        border-radius: 2px;
-        border-top: none;
         width: 100%;
-        margin: 0px 10px 0px 10px;
+        margin: 10px 20px 10px 10px;
+        border: 1px solid var(--accent-color);
+        border-radius: 2px;
+        font-family: var(--font-secondary);
+        font-size: var(--font-scale-input);
+    }
+
+    ::placeholder {
+        font-family: var(--font-secondary);
+        font-size: var(--font-scale-input);
+    }
+
+    input[type=submit] {
+        border: 2px solid var(--accent-color);
+        border-radius: 10px;
+        padding: 3px 4px 3px 4px;
+        background-image: var(--background-image);
+        font-family: var(--font-secondary);
+        font-style: italic;
     }
 
     </style>
@@ -207,41 +245,67 @@
 <body>
     <header>
         <a class="title" href="/">
-            <h1>title placeholder</h1>
+            <h1>name of business</h1>
         </a>
     </header>
 
     <main>
 
-        <h2>About Me</h2>
-        <p>Who I am professionally</p>
-        <p>In my personal life, I like board games and iced chai tea.</p>
-
-        <hr />
-
-        <details>
-            <summary><h3>Services<h3></summary>
-            <p>Accountability Buddy (available during drop-in hours)</p>
-            <p>Navigating the Chaos</p>
+        <div class="initial-section">
+            <p>Hi! I'm Kellan Heth, a personal development coach in Ann Arbor, Michigan.</p>
+            <blockquote><i>"Kellan has a very good ability to take a complex or nebulous task and break it down into actionable steps."</i> — senior software engineer in Columbus, OH</blockquote>
             <p></p>
-            <p>Contact me for drop-in hours or a free consultation.</p>
+        </div>
+
+        <hr />
+
+        <details>
+            <summary><h2>About Me<h2></summary>
+            <div class="inside-details">
+                <p>I'm passionate about organizing my life and want to share that clarity with you. If you're paralyzed by anxiety, what's in your way? If you find yourself wasting your time, why is that? What would it look like for you to be on top of your game right now?</p>
+                <p>People note my nonjudgemental style. I've assisted people with ADHD, autism, and various physical disabilities.</p>
+                <p>My bachelor's degree is in Integrated Systems Engineering in the Human Factors track. Read: human-centered design, change management, mathematical optimization. What's relevant to you: a little prep goes a long way; systematic problems require systematic solutions; you have to listen in order to help.</p>
+                <p>My day jobs have been in software and data. What's relevant to you: experience with iterative planning; experience balancing streamlining for the future vs getting things done in the moment.</p>
+                <p>In my personal life, I like board games and iced chai tea.</p>
+            </div>
+        </details>
+
+        
+        <hr />
+
+        <details>
+            <summary><h2>Services<h2></summary>
+            <div class="inside-details">
+                <p>In-person, telephone, or video call.</p>
+                <h3>Project Planning</h3>
+                <ul>
+                    <li>For when you have an idea of what you want to accomplish, but not how to get there</li>
+                    <li>We&#39;ll envision potential narratives for its completion as well as break down barriers to progress. </li>
+                    <li>Regular check-ins are the key to success. How often depends on how much time you have to devote between sessions. I&#39;ve had clients who benefited from in-depth troubleshooting/planning monthly, weekly, or multiple times a week.</li>
+                    <li>Together we&#39;ll assign homework to complete by the next session.</li>
+                </ul>
+                <h3>Accountability Buddy</h3>
+                <ul>
+                    <li>For when you know what you need to do, but can&#39;t seem to stay focused on it</li>
+                    <li>I&#39;ll keep you on task, and optionally take notes or provide feedback.</li>
+                </ul>
+                <h3>Drop-in Hours</h3>
+                <ul>
+                    <li>Select hours in downtown Ann Arbor</li>
+                    <li>Contact me for up-to-date information</li>
+                </ul>
+                <p>For rates, set up a free consultation. I&#39;m open to barter as well.</p>
+            </div>
         </details>
 
         <hr />
 
         <details>
-            <summary><h3>Testimonials<h3></summary>
-            <p>testimonials?</p>
-        </details>
-
-        <hr />
-
-        <details open="true">
-            <summary><h3>Contact</h3></summary>
-            <div>
+            <summary><h2>Contact</h2></summary>
+            <div class="inside-details">
                 <form action="send-email.php" method="post">
                     <div class="form-input">
-                        <label for="name">Name: </label>
+                        <label for="name">Name:</label>
                         <input type="text" name="name" id="name" required />
                     </div>
                     <div class="nickname">
@@ -249,7 +313,7 @@
                         <input type="text" name="nickname" id="nickname" class="nickname" />
                     </div>
                     <div class="form-input">
-                        <label for="email">Email address: </label>
+                        <label for="email">Email:</label>
                         <input type="email" name="email" id="email" required />
                     </div>
                     <div class="form-input">

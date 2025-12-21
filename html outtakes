@@ -1,0 +1,19 @@
+<p>Some examples of past projects I worked on: sticking with a daily planner for the first time, making a video game solo, selecting health insurance on a tight deadline.</p>
+
+
+    input[type=text], [type=email] {
+        flex: auto;
+        background-image: var(--background-image);
+        background-color: var(--background-color);
+        border: none;
+        border-bottom: 2px solid var(--heading-color);
+        border-radius: 2px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    textarea {
+        border: 2px solid var(--heading-color);
+        border-radius: 2px;
+        width: 100%;
+        margin: 10px 10px 0px 10px;
+    }
