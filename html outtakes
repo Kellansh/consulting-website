@@ -17,3 +17,44 @@
         width: 100%;
         margin: 10px 10px 0px 10px;
     }
+
+<p>I'm passionate about organizing my life and I want to share that clarity with you. What would it look like for you to be on top of your game right now?</p>
+            
+
+
+
+
+
+
+    a {
+        color: var(--text-color);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: var(--visited-color);
+        text-decoration: underline;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    .nav-item {
+        border: 2px solid var(--accent-color-1);
+        border-radius: 5px;
+        padding: 3px 4px 3px 4px;
+        background-color: var(--background-color);
+        background-image: var(--background-image);
+        font-family: var(--font-secondary);
+        font-size: var(--font-scale-input);
+        font-style: italic;
+    }
+
+    .nav-item:hover {
+        text-decoration: none;
+        color: var(--text-color);
+        border-color: var(--accent-color-2);
+        background-color: var(--accent-color-2);
+    }

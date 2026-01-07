@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
-    <title>life coach ann arbor kellan heth</title>
+    <title>Kellan Heth Productivity Coach</title>
 
     <meta name="title" content="life coach ann arbor kellan heth">
     <meta name="description" content="kellan heth is an executive functioning coach">
@@ -68,12 +68,13 @@
         --font-main: Crimson Text, serif;
         --font-secondary: Inclusive Sans, sans-serif;
         --font-scale: 1.1em;
-        --font-scale-input: 0.9em;
+        --font-scale-input: 1em;
         --background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
         --background-color: light-dark(#fff3d7,#f2ecd9);
         --heading-color: light-dark(#005752,#000000);
         --text-color: light-dark(#03233f,#000000);
-        --accent-color: light-dark(#00b9a7,#005752);
+        --accent-color-1: light-dark(#00b9a7,#ffcc00);
+        --accent-color-2: light-dark(#ffcc00,#ffcc00);
         --link-color: light-dark(#aaaaaa,#aaaaaa);
         --visited-color: light-dark(#dddddd,#888888);
     }
@@ -94,22 +95,6 @@
         border-color: var(--text-color);
     }
 
-
-    .title:hover h1 {
-        text-decoration: none;
-    }
-
-    .title h1 {
-        font-family: Gilbert, Outline Style, serif;
-        padding: 5px 10px;
-        background: #ffffff;
-        color: var(--accent-color);
-        display: inline-block;
-        border: 2px solid var(--heading-color);
-        border-style: inset;
-        border-radius: 5px;
-    }
-
     h1, h2 {
         font-family: var(--font-main);
         color: var(--heading-color);
@@ -120,6 +105,7 @@
         font-family: var(--font-secondary);
         color: var(--heading-color);
         margin: 0;
+        font-weight: normal;
         font-style: italic;
     }
 
@@ -137,8 +123,23 @@
         margin: 20px;
     }
 
+    .title {
+        font-family: var(--font-main);
+        padding: 5px 10px;
+        background: #ffffff;
+        background-image: var(--background-image);
+        color: var(--heading-color);
+        text-decoration: none;
+        display: inline-block;
+        border: 2px solid var(--heading-color);
+        border-style: inset;
+        border-radius: 5px;
+        min-width: min-content;
+        max-width: fit-content;
+    }
+
     a {
-        color: var(--link-color);
+        color: var(--text-color);
         cursor: pointer;
         text-decoration: underline;
     }
@@ -148,8 +149,27 @@
         text-decoration: underline;
     }
 
+    nav {
+        margin-top: 10px;
+        margin-bottom: 7px;
+        padding: 10px;
+    }
+
+    .nav-item {
+        padding: 3px 4px 3px 4px;
+        font-family: var(--font-secondary);
+        font-size: var(--font-scale-input);
+        font-style: italic;
+        text-decoration-color: var(--accent-color-1);
+    }
+
+    .nav-item:hover {
+        text-decoration-color: var(--accent-color-2);
+        color: var(--heading-color);
+    }
+
     main {
-        margin-top: 20px;
+        margin-top: 0px;
         margin-bottom: 20px;
         padding: 30px;
         border: 1px solid var(--text-color);
@@ -181,8 +201,22 @@
         display: inline;
     }
 
-    summary::marker {
+    details > summary {
+        list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary::after {
         color: var(--heading-color);
+        content: ' +';
+    }
+
+    details[open] summary::after {
+        color: var(--heading-color);
+        content: ' -';
     }
 
     .nickname {
@@ -206,36 +240,39 @@
         flex: auto;
         min-width: 5em;
         max-width: 15em;
-        height:var(--font-scale);
+        height: var(--font-scale);
         margin-top: 0;
         margin-right: 10px;
         margin-left: 10px; 
         margin-bottom: calc(var(--font-scale)*0.3);
-        border: 1px solid var(--accent-color);
-        border-radius: 2px;
-        font-size: var(--font-scale-input);
     }
 
     textarea {
         width: 100%;
         margin: 10px 20px 10px 10px;
-        border: 1px solid var(--accent-color);
-        border-radius: 2px;
-        font-family: var(--font-secondary);
-        font-size: var(--font-scale-input);
     }
 
-    ::placeholder {
+    input[type=text], [type=email], textarea {
+        border: 1px solid var(--accent-color-1);
+        border-radius: 2px;
+
         font-family: var(--font-secondary);
         font-size: var(--font-scale-input);
+        color: var(--text-color);
+    }
+
+    input:focus, textarea:focus {
+        outline-color: var(--accent-color-2);
+        outline-width: thick;
     }
 
     input[type=submit] {
-        border: 2px solid var(--accent-color);
-        border-radius: 10px;
+        border: 2px solid var(--accent-color-1);
+        border-radius: 5px;
         padding: 3px 4px 3px 4px;
         background-image: var(--background-image);
         font-family: var(--font-secondary);
+        font-size: var(--font-scale-input);
         font-style: italic;
     }
 
@@ -245,64 +282,80 @@
 <body>
     <header>
         <a class="title" href="/">
-            <h1>name of business</h1>
+            <h1>Kellan&nbsp;Heth Productivity&nbsp;Coach</h1>
         </a>
     </header>
+
+    <nav>
+        <a class="nav-item" href="#about-me">About&nbsp;me</a>
+        |
+        <a class="nav-item" href="#services">Services</a>
+        |
+        <a class="nav-item" href="#drop-in">Drop&#8209;in&nbsp;hours</a>
+        |
+        <a class="nav-item" href="#contact">Contact</a>
+    </nav>
 
     <main>
 
         <div class="initial-section">
-            <p>Hi! I'm Kellan Heth, a personal development coach in Ann Arbor, Michigan.</p>
-            <blockquote><i>"Kellan has a very good ability to take a complex or nebulous task and break it down into actionable steps."</i> — senior software engineer in Columbus, OH</blockquote>
-            <p></p>
+            <p>intro sentence</p>
+            <blockquote><i>"Kellan has a very good ability to take a complex or nebulous task and break it down into actionable steps."</i> —&nbsp;Senior Software Engineer in Columbus, OH</blockquote>
         </div>
 
-        <hr />
+        <br>
 
-        <details>
-            <summary><h2>About Me<h2></summary>
-            <div class="inside-details">
-                <p>I'm passionate about organizing my life and want to share that clarity with you. If you're paralyzed by anxiety, what's in your way? If you find yourself wasting your time, why is that? What would it look like for you to be on top of your game right now?</p>
-                <p>People note my nonjudgemental style. I've assisted people with ADHD, autism, and various physical disabilities.</p>
-                <p>My bachelor's degree is in Integrated Systems Engineering in the Human Factors track. Read: human-centered design, change management, mathematical optimization. What's relevant to you: a little prep goes a long way; systematic problems require systematic solutions; you have to listen in order to help.</p>
-                <p>My day jobs have been in software and data. What's relevant to you: experience with iterative planning; experience balancing streamlining for the future vs getting things done in the moment.</p>
-                <p>In my personal life, I like board games and iced chai tea.</p>
+        <details open="true">
+            <summary><h2>About me<h2></summary>
+            <div id="about-me" class="inside-details">
+                <p>I'm passionate about organizing my life and I want to share that clarity with you. What would it look like for you to be living your life to the fullest right now?</p>
+                <p>I help people find methods and systems that take into account their individual thinking and learning styles, and people have noted my nonjudgemental style. I've assisted people with ADHD, autism, and various physical disabilities in getting the most out of what they can do.</p>
+                <p>My background is in systems engineering. As part of my degree, I learned quite a bit about management, human centered design, planning, streamlining, and efficiency.</p>
+                <p>My day jobs have been in software and data. The most common way of organizing work in software development is iterative, that is to say, by planning a small chunk of work, looking back at how it went, then doing the next chunk. In addition, I practiced balancing streamlining for the future vs. getting things done in the moment.</p>
+                <p>In my personal life, I like meditating, iced chai tea, and finding the dog at a party.</p>
             </div>
         </details>
 
-        
-        <hr />
+        <br>
 
-        <details>
+        <details open="true">
             <summary><h2>Services<h2></summary>
-            <div class="inside-details">
-                <p>In-person, telephone, or video call.</p>
+            <div id="services" class="inside-details">
                 <h3>Project Planning</h3>
+                <i>When you have an idea of what you want to accomplish, but not how to get there</i>
                 <ul>
-                    <li>For when you have an idea of what you want to accomplish, but not how to get there</li>
-                    <li>We&#39;ll envision potential narratives for its completion as well as break down barriers to progress. </li>
-                    <li>Regular check-ins are the key to success. How often depends on how much time you have to devote between sessions. I&#39;ve had clients who benefited from in-depth troubleshooting/planning monthly, weekly, or multiple times a week.</li>
-                    <li>Together we&#39;ll assign homework to complete by the next session.</li>
+                    <li>We'll envision potential narratives for its completion as well as break down barriers to progress. </li>
+                    <li>Regular check-ins are the key to success. How often depends on how much time you have to devote between sessions. I've had clients who benefited from in-depth troubleshooting/planning monthly, weekly, or multiple times a week.</li>
+                    <li>Together we'll assign homework to complete by the next session.</li>
                 </ul>
+                <br>
                 <h3>Accountability Buddy</h3>
+                <i>When you know what you need to do, but can't seem to stay focused on it</i>
                 <ul>
-                    <li>For when you know what you need to do, but can&#39;t seem to stay focused on it</li>
-                    <li>I&#39;ll keep you on task, and optionally take notes or provide feedback.</li>
+                    <li>I'll keep you on task, and optionally take notes or provide feedback.</li>
                 </ul>
-                <h3>Drop-in Hours</h3>
+            </div>
+        </details>
+
+        <br>
+
+        <details open="true">
+            <summary><h2>Drop-in hours<h2></summary>
+            <div id="drop-in" class="inside-details">
                 <ul>
-                    <li>Select hours in downtown Ann Arbor</li>
+                    <li>Select hours in downtown Ann Arbor, Michigan</li>
                     <li>Contact me for up-to-date information</li>
                 </ul>
-                <p>For rates, set up a free consultation. I&#39;m open to barter as well.</p>
             </div>
         </details>
 
-        <hr />
+        <br>
 
-        <details>
-            <summary><h2>Contact</h2></summary>
-            <div class="inside-details">
+        <details open="true">
+            <summary><h2>Contact<h2></summary>
+            <div id="contact" class="inside-details">
+                <p>I offer in-person, telephone, or video call sessions.</p>
+                <p>To schedule a free consultation, contact me at kellan@coachedbykellan.com, or fill out this form:</p>
                 <form action="send-email.php" method="post">
                     <div class="form-input">
                         <label for="name">Name:</label>
@@ -319,7 +372,7 @@
                     <div class="form-input">
                         <textarea name="message" id="message" required
                             rows="5"
-                            placeholder="Your message here..."></textarea>
+                            placeholder="Your question here..."></textarea>
                     </div>
                     <div>
                         <input type="submit" value="Send" />
