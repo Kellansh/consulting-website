@@ -219,6 +219,25 @@
         content: ' -';
     }
 
+    .contact-desc-plus-pfp {
+        display: flex;
+        align-content: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap-reverse;
+    }
+
+    .contact-desc {
+        max-width: calc(var(--width) * 0.65);
+    }
+
+    .pfp {
+        min-width: 50px;
+        max-width: 100px;
+        height: fit-content;
+        border: 2px solid var(--accent-color-1);
+        border-radius: 100%;
+    }
+
     .nickname {
         display: none;
     }
@@ -299,13 +318,13 @@
     <main>
 
         <div class="initial-section">
-            <p>intro sentence</p>
+            <p>Hi! I'm a coach/consultant in Ann Arbor, Michigan.</p>
             <blockquote><i>"Kellan has a very good ability to take a complex or nebulous task and break it down into actionable steps."</i> —&nbsp;Senior Software Engineer in Columbus, OH</blockquote>
         </div>
 
         <br>
 
-        <details open="true">
+        <details>
             <summary><h2>About me<h2></summary>
             <div id="about-me" class="inside-details">
                 <p>I'm passionate about organizing my life and I want to share that clarity with you. What would it look like for you to be living your life to the fullest right now?</p>
@@ -318,7 +337,7 @@
 
         <br>
 
-        <details open="true">
+        <details>
             <summary><h2>Services<h2></summary>
             <div id="services" class="inside-details">
                 <h3>Project Planning</h3>
@@ -339,7 +358,7 @@
 
         <br>
 
-        <details open="true">
+        <details>
             <summary><h2>Drop-in hours<h2></summary>
             <div id="drop-in" class="inside-details">
                 <ul>
@@ -354,8 +373,13 @@
         <details open="true">
             <summary><h2>Contact<h2></summary>
             <div id="contact" class="inside-details">
-                <p>I offer in-person, telephone, or video call sessions.</p>
-                <p>To schedule a free consultation, contact me at kellan@coachedbykellan.com, or fill out this form:</p>
+                <div class="contact-desc-plus-pfp">
+                    <div class="contact-desc">
+                        <p>I offer in-person, telephone, or video call sessions.</p>
+                        <p>To schedule a free consultation, contact me at kellan@coachedbykellan.com, or fill out this form:</p>
+                    </div>
+                    <img class="pfp" src="pfp.jpg" alt="Neutral headshot smiling at the camera">
+                </div>
                 <form action="send-email.php" method="post">
                     <div class="form-input">
                         <label for="name">Name:</label>
