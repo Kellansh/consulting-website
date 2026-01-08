@@ -73,7 +73,7 @@
         line-height: 1.5;
         color: var(--text-color) !important;
         border-color: var(--text-color);
-        text-wrap-style: balance;
+        text-wrap-style: pretty;
     }
 
     h1, h2 {
@@ -205,10 +205,12 @@
         align-content: flex-start;
         justify-content: space-between;
         flex-wrap: wrap-reverse;
+        text-wrap-style: pretty;
     }
 
-    .contact-desc {
-        max-width: calc(var(--width) * 0.65);
+    .contact-desc > * {
+        min-width: 0;
+        flex-grow: 1;
     }
 
     .pfp {
@@ -356,7 +358,7 @@
                 <div class="contact-desc-plus-pfp">
                     <div class="contact-desc">
                         <p>I offer in-person, telephone, or video call sessions.</p>
-                        <p>To schedule a free consultation, contact me at kellan@coachedbykellan.com, or fill out this form:</p>
+                        <p>To schedule a free consultation, contact me at kellan@<wbr>coachedbykellan.com, or fill out this form:</p>
                     </div>
                     <img class="pfp" src="pfp.jpg" alt="Neutral headshot smiling at the camera">
                 </div>
