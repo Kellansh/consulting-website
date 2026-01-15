@@ -55,8 +55,8 @@
         --text-color: light-dark(#03233f,#000000);
         --accent-color-1: light-dark(#00b9a7,#ffcc00);
         --accent-color-2: light-dark(#ffcc00,#ffcc00);
-        --link-color: light-dark(#aaaaaa,#aaaaaa);
-        --visited-color: light-dark(#dddddd,#888888);
+        --link-color: light-dark(#005752,#aaaaaa);
+        --visited-color: light-dark(#00b9a7,#888888);
     }
 
     body {
@@ -126,7 +126,7 @@
     }
 
     a:hover {
-        color: var(--visited-color);
+        color: var(--link-color);
         text-decoration: underline;
     }
 
@@ -208,14 +208,16 @@
         text-wrap-style: pretty;
     }
 
-    .contact-desc {
+    .contact-desc > p {
         min-width: 0;
-        flex-grow: 1;
+        flex: auto;
     }
 
     .pfp {
         min-width: 50px;
         max-width: 100px;
+        height: auto;
+        margin: 0px 10px 0px 10px;
         border: 2px solid var(--accent-color-1);
         border-radius: 100%;
     }
