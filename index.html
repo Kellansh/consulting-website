@@ -45,6 +45,7 @@
 
     :root, body, html, * {
         --width: 720px;
+        --main-padding: 30px;
         --font-main: Crimson Text, serif;
         --font-secondary: Inclusive Sans, sans-serif;
         --font-scale: 1.1em;
@@ -103,6 +104,11 @@
         margin: 20px;
     }
 
+    header {
+        width: calc(var(--width) + (var(--main-padding) * 2));
+        margin: auto;
+    }
+
     .title {
         font-family: var(--font-main);
         padding: 5px 10px;
@@ -151,7 +157,7 @@
     main {
         max-width: var(--width);
         margin: auto;
-        padding: 30px;
+        padding: var(--main-padding);
         border: 1px solid var(--text-color);
         line-height: 1.6;
         background-image: none;
