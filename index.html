@@ -190,14 +190,14 @@
         display: none;
     }
 
-    summary::after {
-        color: var(--heading-color);
-        content: ' +';
-    }
-
     details[open] summary::after {
         color: var(--heading-color);
-        content: ' -';
+        content: ' ⏷' / 'close section';
+    }
+
+    summary::after {
+        color: var(--heading-color);
+        content: ' ⏵' / 'open section';
     }
 
     .contact-desc-plus-pfp {
