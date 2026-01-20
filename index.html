@@ -177,8 +177,8 @@
         padding: 0 10px 0 10px;
     }
 
-    details summary > * {
-        display: inline;
+    details > * {
+        /* display: inline; */
     }
 
     details > summary {
@@ -189,14 +189,14 @@
         display: none;
     }
 
-    details[open] summary::after {
+    .summary-header::after {
+        content: ' ⏵' / 'open section';
         color: var(--heading-color);
-        content: ' ⏷' / 'close section';
+        font-size: 0.75em;
     }
 
-    summary::after {
-        color: var(--heading-color);
-        content: ' ⏵' / 'open section';
+    details[open] .summary-header::after {
+        content: ' ⏷' / 'close section';
     }
 
     .contact-desc-plus-pfp {
@@ -304,7 +304,7 @@
         <br>
 
         <details open="true">
-            <summary><h2>About me<h2></summary>
+            <summary><div><h2 class="summary-header">About me</h2></div></summary>
             <div id="about-me" class="inside-details">
                 <p>I'm passionate about organizing my life and I want to share that clarity with you. What would it look like for you to be living your life to the fullest right now?</p>
                 <p>I help people find methods and systems that take into account their individual thinking and learning styles, and people have noted my nonjudgemental style. I've assisted people with ADHD, autism, and various physical disabilities in getting the most out of what they can do.</p>
@@ -317,7 +317,7 @@
         <br>
 
         <details open="true">
-            <summary><h2>Services<h2></summary>
+            <summary><div><h2 class="summary-header">Services</h2></div></summary>
             <div id="services" class="inside-details">
                 <h3>Project Planning</h3>
                 <i>When you have an idea of what you want to accomplish, but not how to get there</i>
@@ -338,7 +338,7 @@
         <br>
 
         <details open="true">
-            <summary><h2>Drop-in hours<h2></summary>
+            <summary><div><h2 class="summary-header">Drop-in hours</h2></div></summary>
             <div id="drop-in" class="inside-details">
                 <ul>
                     <li>Select hours in downtown Ann Arbor, Michigan</li>
