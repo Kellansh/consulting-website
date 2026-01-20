@@ -60,7 +60,6 @@
     }
 
     body {
-        max-width: var(--width);
         font-family: var(--font-secondary);
         font-size: var(--font-scale);
         margin: auto;
@@ -150,8 +149,8 @@
     }
 
     main {
-        margin-top: 0px;
-        margin-bottom: 20px;
+        max-width: var(--width);
+        margin: auto;
         padding: 30px;
         border: 1px solid var(--text-color);
         line-height: 1.6;
@@ -351,7 +350,7 @@
         <br>
 
         <details open="true">
-            <summary><h2>Contact<h2></summary>
+            <summary><div><h2 class="summary-header">Contact</h2></div></summary>
             <div id="contact" class="inside-details">
                 <div class="contact-desc-plus-pfp">
                     <div class="contact-desc">
